@@ -6,6 +6,8 @@ from gi.repository import AppIndicator3 as appindicator
 
 import os
 import signal
+import threading
+import time
 import dbus
 from Lyrics import get_lyrics
 
@@ -50,8 +52,10 @@ class LyricsWindow(Gtk.Window):
 		self.lyrics.set_property("margin_right", 40)
 		self.lyrics.set_line_wrap(True)
 
+		self.spinner = Gtk.Spinner()
 
 		self.lyrics_vbox.pack_start(self.title, False, False, 5)
+		self.lyrics_vbox.pack_start(self.spinner, False, False, 5)
 		self.lyrics_vbox.pack_start(self.lyrics, False, False, 5)
 		self.lyrics_vbox.set_size_request(350, 700)
 
@@ -64,17 +68,23 @@ class LyricsWindow(Gtk.Window):
 		self.add(scrolled)
 		self.show_all()
 
-		if(type == "spotify"):
-			self.get_spotify()
+			
+	def put_lyrics(self, song):
+		self.spinner.start()
+		self.lyrics.set_text("")
+		lyrics = get_lyrics(song)
+		self.lyrics.set_text(lyrics)
+		self.spinner.stop()
 
 	def fetch_lyrics(self, source):
+		input = self.input.get_text()
 
-		text = self.input.get_text()
-		lyrics = get_lyrics(text)
-
-		text = "<b><big>"+text+"</big></b>"
+		text = "<b><big>"+input+"</big></b>"
 		self.title.set_markup(text)
-		self.lyrics.set_text(lyrics)
+
+		thread = threading.Thread(target=self.put_lyrics, kwargs={'song':input})
+		thread.daemon = True
+		thread.start()
 
 	def get_spotify_song_data(self):
 		session_bus = dbus.SessionBus()
@@ -95,6 +105,7 @@ class LyricsWindow(Gtk.Window):
 			artist = song_data['artist']
 			artUrl = song_data['artUrl']
 		except:
+			self.lyrics_vbox.remove(self.spinner)
 			self.title.set_markup("<big><b>Error</b></big>")
 			self.lyrics.set_text("Could not get current spotify song details")
 			return
@@ -102,8 +113,8 @@ class LyricsWindow(Gtk.Window):
 		title = "<b><big>" + song + "</big>\n" + artist + "</b>"
 		self.title.set_markup(title)
 
-		lyrics = get_lyrics(song + " " + artist)
-		self.lyrics.set_text(lyrics)
+		self.put_lyrics(song + " " + artist)
+		#self.lyrics_vbox.remove(self.spinner)
 
 class AppIndicator():
 	
@@ -139,6 +150,9 @@ class AppIndicator():
 
 	def spotify_lyrics(self, source):
 		win = LyricsWindow("spotify")
+		thread = threading.Thread(target=win.get_spotify)
+		thread.daemon = True
+		thread.start()
 
 	def quit(self, source):
 		Gtk.main_quit()
