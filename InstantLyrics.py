@@ -13,13 +13,19 @@ from Lyrics import get_lyrics
 
 APPINDICATOR_ID = 'lyricsappindicator'
 
+def get_resource_path(rel_path):
+	dir_of_py_file = os.path.dirname(__file__)
+	rel_path_to_resource = os.path.join(dir_of_py_file, rel_path)
+	abs_path_to_resource = os.path.abspath(rel_path_to_resource)
+	return abs_path_to_resource
+
 class LyricsWindow(Gtk.Window):
 
 	def __init__(self, type):
 		Gtk.Window.__init__(self, title="Lyrics")
-		self.set_icon_from_file(os.path.abspath('icon.svg'))
+		self.set_icon_from_file(get_resource_path('icon.svg'))
 		self.set_border_width(20)
-		self.set_default_size(350, 700)
+		self.set_default_size(350, 650)
 		self.set_position(Gtk.WindowPosition.CENTER)
 
 		self.main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
@@ -124,18 +130,13 @@ class LyricsWindow(Gtk.Window):
 
 		self.put_lyrics(song + " " + artist)
 
-	def get_resource_path(rel_path):
-		dir_of_py_file = os.path.dirname(__file__)
-		rel_path_to_resource = os.path.join(dir_of_py_file, rel_path)
-		abs_path_to_resource = os.path.abspath(rel_path_to_resource)
-		return abs_path_to_resource
 
 class AppIndicator():
 	
 	def __init__(self):
 		signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-		indicator = appindicator.Indicator.new(APPINDICATOR_ID, os.path.abspath('icon.svg'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
+		indicator = appindicator.Indicator.new(APPINDICATOR_ID, get_resource_path('icon.svg'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
 		indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
 		indicator.set_menu(self.build_menu())
 		Gtk.main()
