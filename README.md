@@ -5,6 +5,8 @@ Get lyrics of the currently playing spotify song, or any song, instantly.
 A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 # Screenshots
+![Screenshot](https://cloud.githubusercontent.com/assets/6123105/23824316/3fe58044-069a-11e7-804e-180ea4041002.jpeg)
+
 
 # Requirements
 
@@ -49,6 +51,7 @@ The icon will appear in the system tray (indicator panel). You can start using t
 
 You can either use the application from the terminal, or create a launcher shortcut, which will add the application in your launcher menu:
 
+![Launcher](https://cloud.githubusercontent.com/assets/6123105/23824317/4735e83e-069a-11e7-8b1e-2814632bb3aa.jpeg)
 
 You can find several ways of doing so. You can also follow the below steps:
 
