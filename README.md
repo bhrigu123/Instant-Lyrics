@@ -61,7 +61,7 @@ You can find several ways of doing so. You can also follow the below steps:
 
 * Create a new file in the location `/usr/share/applications` and name it `instant-lyrics.desktop`
 
-* Paste the following in the created file:
+* Open this file with an editor and paste the following in it:
 
 ```
 [Desktop Entry]
