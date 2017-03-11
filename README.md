@@ -10,16 +10,20 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * python-gi
 
-* python3-gi
-
 * dbus
 
-You can install these for your system either by `pip` or your package manager.
+* requests: Install from pip as `pip install requests`
 
-Like, for Ubuntu/Debian based OS, you can install as:
+* bs4: Install from pip as `pip install beautifulsoup4`
+
+* lxml: `pip install lxml`
+
+You can install the first 2 using your package manager.
+
+For Ubuntu/Debian based OS, you can install as:
 
 `sudo apt install python-gi`
-`sudo apt install python3-gi`
+
 `sudo apt install python-dbus`
 
 # Installation
