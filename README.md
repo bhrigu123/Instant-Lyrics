@@ -31,7 +31,7 @@ For Ubuntu/Debian based systems, you can install as:
 
 `sudo apt install python-gi`
 
-`sudo apt-get install gir1.2-appindicator3-0.1`
+`sudo apt install gir1.2-appindicator3-0.1`
 
 `sudo apt install python-dbus`
 
