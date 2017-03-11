@@ -39,7 +39,7 @@ For Ubuntu/Debian based systems, you can install as:
 
 2. `cd Instant-Lyrics/`
 
-3. Run the command `sudo pip install -r requirements.txt` to install the pip packages.
+3. Run the command `pip install -r requirements.txt` to install the pip packages.
 
 3. Run the command `python InstantLyrics.py`
 
