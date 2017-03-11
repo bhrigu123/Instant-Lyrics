@@ -23,11 +23,11 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * lxml
 
-`requests`, `beautifulsoup4` and `lxml` can be installed via pip (shown below).
+
 
 To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager.
 
-For Ubuntu/Debian based systems, you can install as:
+### For Ubuntu/Debian based systems:
 
 `sudo apt install python-gi`
 
@@ -35,6 +35,14 @@ For Ubuntu/Debian based systems, you can install as:
 
 `sudo apt install python-dbus`
 
+### For Arch users
+
+`sudo pacman -S python2-dbus python2-requests python2-lxml python2-beautifulsoup4`
+
+`sudo pacman -S python2-gobject libappindicator-gtk3`
+
+<br>
+`requests`, `beautifulsoup4` and `lxml` can be installed via pip also (shown below).
 
 # Installation
 
@@ -44,7 +52,7 @@ For Ubuntu/Debian based systems, you can install as:
 
 2. `cd Instant-Lyrics/`
 
-3. Run the command `pip install -r requirements.txt` to install the pip packages.
+3. Run the command `pip install -r requirements.txt` to install requests, lxml and beautifulsoup4 (if you haven't already).
 
 3. Run the command `python InstantLyrics.py`
 
