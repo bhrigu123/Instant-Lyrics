@@ -4,7 +4,7 @@ Get lyrics of the currently playing spotify song, or any song, instantly.
 
 A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
-# Screenshots
+# Screenshot
 ![Screenshot](https://cloud.githubusercontent.com/assets/6123105/23824316/3fe58044-069a-11e7-804e-180ea4041002.jpeg)
 
 
@@ -20,10 +20,7 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * lxml
 
-`requests`, `beautifulsoup4` and `lxml` can be installed via pip.
-
-Run the command `pip install -r requirements.txt` which will install these 3 for you.
-
+`requests`, `beautifulsoup4` and `lxml` can be installed via pip (shown below).
 
 To install `python-dbus` and `python-gi`, you will need to install using your package manager.
 
@@ -41,6 +38,8 @@ For Ubuntu/Debian based systems, you can install as:
 1. Clone the repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
 
 2. `cd Instant-Lyrics/`
+
+3. Run the command `sudo pip install -r requirements.txt` to install the pip packages.
 
 3. Run the command `python InstantLyrics.py`
 
