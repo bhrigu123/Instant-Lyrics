@@ -10,17 +10,22 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * python-gi
 
-* dbus
+* python-dbus
 
-* requests: Install from pip as `pip install requests`
+* requests
 
-* bs4: Install from pip as `pip install beautifulsoup4`
+* beautifulsoup4
 
-* lxml: `pip install lxml`
+* lxml
 
-You can install the first 2 using your package manager.
+`requests`, `beautifulsoup4` and `lxml` can be installed via pip.
 
-For Ubuntu/Debian based OS, you can install as:
+Run the command `pip install -r requirements.txt` which will install these 3 for you.
+
+
+To install `python-dbus` and `python-gi`, you will need to install using your package manager.
+
+For Ubunt/Debian based systems, you can install as:
 
 `sudo apt install python-gi`
 
@@ -32,7 +37,9 @@ For Ubuntu/Debian based OS, you can install as:
 
 1. Clone the repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
 
-2. Run `python InstantLyrics.py`
+2. cd Instant-Lyrics
+
+3. Run `python InstantLyrics.py`
 
 The icon will appear in the task menu now.
 
