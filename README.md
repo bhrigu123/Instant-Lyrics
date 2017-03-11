@@ -29,11 +29,8 @@ To install `python-dbus`, `appindicator3` and `python-gi`, you will need to inst
 
 ### For Ubuntu/Debian based systems:
 
-`sudo apt install python-gi`
+`sudo apt install python-gi gir1.2-appindicator3-0.1 python-dbus`
 
-`sudo apt install gir1.2-appindicator3-0.1`
-
-`sudo apt install python-dbus`
 
 ### For Arch users
 
