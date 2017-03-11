@@ -7,6 +7,9 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 # Screenshot
 ![Screenshot](https://cloud.githubusercontent.com/assets/6123105/23824316/3fe58044-069a-11e7-804e-180ea4041002.jpeg)
 
+# Working
+### GIF
+![working](https://cloud.githubusercontent.com/assets/6123105/23824730/e0e0829e-06a1-11e7-8d57-3235c4266f2c.gif)
 
 # Requirements
 
