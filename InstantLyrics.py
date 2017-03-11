@@ -13,7 +13,7 @@ from Lyrics import get_lyrics
 
 APPINDICATOR_ID = 'lyricsappindicator'
 
-def get_resource_path(rel_path):
+def get_icon_path(rel_path):
 	dir_of_py_file = os.path.dirname(__file__)
 	rel_path_to_resource = os.path.join(dir_of_py_file, rel_path)
 	abs_path_to_resource = os.path.abspath(rel_path_to_resource)
@@ -23,7 +23,7 @@ class LyricsWindow(Gtk.Window):
 
 	def __init__(self, type):
 		Gtk.Window.__init__(self, title="Lyrics")
-		self.set_icon_from_file(get_resource_path('icon.svg'))
+		self.set_icon_from_file(get_icon_path('icon.svg'))
 		self.set_border_width(20)
 		self.set_default_size(350, 650)
 		self.set_position(Gtk.WindowPosition.CENTER)
@@ -54,7 +54,7 @@ class LyricsWindow(Gtk.Window):
 		entry_hbox.set_property("margin", 10)
 
 		self.input = Gtk.Entry()
-		self.input.set_text("song/artist/whatever")
+		self.input.set_text("song/artist")
 		self.input.connect("key-release-event", self.on_key_release)
 		entry_hbox.pack_start(self.input, True, True, 0)
 
@@ -122,7 +122,14 @@ class LyricsWindow(Gtk.Window):
 			artist = song_data['artist']
 		except:
 			self.title.set_markup("<big><b>Error</b></big>")
-			self.lyrics.set_text("Could not get current spotify song details")
+			message = ("Could not get current spotify song\n"
+						"Either spotify is not running or\n"
+						"no song is playing on spotify.\n\n"
+						"Else, report an issue " \
+						"<a href=\"https://github.com/bhrigu123/Instant-Lyrics\" "
+                 "title=\"Repo url\">here</a>")
+
+			self.lyrics.set_markup(message)
 			return
 
 		title = "<b><big>" + song + "</big>\n" + artist + "</b>"
@@ -136,7 +143,7 @@ class AppIndicator():
 	def __init__(self):
 		signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-		indicator = appindicator.Indicator.new(APPINDICATOR_ID, get_resource_path('icon.svg'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
+		indicator = appindicator.Indicator.new(APPINDICATOR_ID, get_icon_path('icon.svg'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
 		indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
 		indicator.set_menu(self.build_menu())
 		Gtk.main()

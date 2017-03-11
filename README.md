@@ -27,7 +27,7 @@ Run the command `pip install -r requirements.txt` which will install these 3 for
 
 To install `python-dbus` and `python-gi`, you will need to install using your package manager.
 
-For Ubunt/Debian based systems, you can install as:
+For Ubuntu/Debian based systems, you can install as:
 
 `sudo apt install python-gi`
 
@@ -55,6 +55,8 @@ You can either use the application from the terminal, or create a launcher short
 
 You can find several ways of doing so. You can also follow the below steps:
 
+(You will have to use `sudo` while doing this from terminal)
+
 * Create a new file in the location `/usr/share/applications` and name it `instant-lyrics.desktop`
 
 * Paste the following in the created file:
@@ -80,6 +82,8 @@ These two lines should look something like:
 Icon=/home/ubuntu/Instant-Lyrics/icon.svg
 Exec=python /home/ubuntu/Instant-Lyrics/InstantLyrics.py
 ```
+
+You should be able to see the `Instant Lyrics` application shortcut in your launcher menu.
 
 ======
 
