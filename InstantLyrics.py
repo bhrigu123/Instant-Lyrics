@@ -110,8 +110,8 @@ class LyricsWindow(Gtk.Window):
 		spotify_properties = dbus.Interface(spotify_bus,"org.freedesktop.DBus.Properties")
 		metadata = spotify_properties.Get("org.mpris.MediaPlayer2.Player", "Metadata")
 	
-		title = metadata['xesam:title'].encode('utf-8').replace("&", "&amp;")
-		artist = metadata['xesam:artist'][0].encode('utf-8').replace("&", "&amp;")
+		title = metadata['xesam:title'].encode('utf-8').decode('utf-8').replace("&", "&amp;")
+		artist = metadata['xesam:artist'][0].encode('utf-8').decode('utf-8').replace("&", "&amp;")
 		return {'title':title, 'artist':artist}
 
 	def get_spotify(self):
