@@ -1,12 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-import urllib
+
+try:
+	from urllib.parse import quote_plus
+except ImportError:
+	from urllib import quote_plus
 
 def get_lyrics(song_name):
 
 	song_name +=  ' metrolyrics'
-	name =  urllib.quote_plus(song_name)
+	name =  quote_plus(song_name)
 	hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
@@ -22,7 +26,10 @@ def get_lyrics(song_name):
 	soup = BeautifulSoup(lyrics_html, "lxml")
 	raw_lyrics= (soup.findAll('p', attrs={'class' : 'verse'}))
 	paras=[]
-	final_lyrics=unicode.join(u'\n',map(unicode,raw_lyrics))
+	try:
+		final_lyrics=unicode.join(u'\n',map(unicode,raw_lyrics))
+	except NameError:
+		final_lyrics=str.join(u'\n',map(str,raw_lyrics))
 	
 	final_lyrics= (final_lyrics.replace('<p class="verse">','\n'))
 	final_lyrics= (final_lyrics.replace('<br/>',' '))
