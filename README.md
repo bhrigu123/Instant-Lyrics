@@ -56,9 +56,7 @@ To install `python-dbus`, `appindicator3` and `python-gi`, you will need to inst
 
 2. `cd Instant-Lyrics/`
 
-3. Run the command `pip install -r requirements.txt` to install requests, lxml and beautifulsoup4 (if you haven't already).
-
-4. Run the command `python InstantLyrics.py`
+3. Run the command `python InstantLyrics.py`
 
 The icon will appear in the system tray (indicator panel). You can start using the application from there.
 
@@ -75,7 +73,7 @@ You can find several ways of doing so. You can also follow the below steps:
 
 * `sudo touch /usr/share/applications/instant-lyrics.desktop`. (Creates a new file in /usr/share/applications).
 
-* Open this new file with an editor. Eg. opening with gedit: `gedit /usr/share/applicationsinstant-lyrics.desktop`. Paste the following in it:
+* Open this new file with an editor. Eg. opening with gedit: `gedit /usr/share/applications/instant-lyrics.desktop`. Paste the following in it:
 
 ```
 [Desktop Entry]
