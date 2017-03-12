@@ -23,14 +23,15 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * lxml
 
+Works with Python 2/3. Shown below is installation and running with Python 2.
 
-
-To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager.
+To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager. Whereas `requests`, `beautifulsoup4` and `lxml` can be installed from `pip` also. 
 
 ### For Ubuntu/Debian based systems:
 
 `sudo apt install python-gi python-dbus gir1.2-appindicator3-0.1 `
 
+`pip install requests beautifulsoup4 lxml`
 
 ### For Arch users
 
@@ -38,8 +39,14 @@ To install `python-dbus`, `appindicator3` and `python-gi`, you will need to inst
 
 `sudo pacman -S python2-gobject libappindicator-gtk3`
 
+### Fedora (not tested yet)
+`sudo dnf install pygobject3 python-gobject`
+
+`sudo yum install libappindicator-gtk3`
+
+`pip install requests beautifulsoup4 lxml`
 <br>
-`requests`, `beautifulsoup4` and `lxml` can be installed via pip also (shown below).
+
 
 # Installation
 
@@ -51,7 +58,7 @@ To install `python-dbus`, `appindicator3` and `python-gi`, you will need to inst
 
 3. Run the command `pip install -r requirements.txt` to install requests, lxml and beautifulsoup4 (if you haven't already).
 
-3. Run the command `python InstantLyrics.py`
+4. Run the command `python InstantLyrics.py`
 
 The icon will appear in the system tray (indicator panel). You can start using the application from there.
 
@@ -64,11 +71,11 @@ You can either use the application from the terminal, or create a launcher short
 
 You can find several ways of doing so. You can also follow the below steps:
 
-(You will have to use `sudo` while doing this from terminal)
+(From the terminal)
 
-* Create a new file in the location `/usr/share/applications` and name it `instant-lyrics.desktop`
+* `sudo touch /usr/share/applications/instant-lyrics.desktop`. (Creates a new file in /usr/share/applications).
 
-* Open this file with an editor and paste the following in it:
+* Open this new file with an editor. Eg. opening with gedit: `gedit /usr/share/applicationsinstant-lyrics.desktop`. Paste the following in it:
 
 ```
 [Desktop Entry]
@@ -92,7 +99,17 @@ Icon=/home/ubuntu/Instant-Lyrics/icon.svg
 Exec=python /home/ubuntu/Instant-Lyrics/InstantLyrics.py
 ```
 
+* Save the file.
+
 You should be able to see the `Instant Lyrics` application shortcut in your launcher menu.
+
+
+# Contribution
+Create an issue to discuss the changes/modifications before sending a PR.
+
+======
+## Icon Credits
+Icon made by [Freepik](http://www.freepik.com/) from www.flaticon.com
 
 ======
 
