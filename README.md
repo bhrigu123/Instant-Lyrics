@@ -13,7 +13,9 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 # Requirements
 
-* python-gi, AppIndicator3
+* python-gi (PyGObject)
+
+* AppIndicator3
 
 * python-dbus
 
@@ -25,7 +27,9 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 Works with Python 2/3. Shown below is installation and running with Python 2.
 
-To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager. Whereas `requests`, `beautifulsoup4` and `lxml` can be installed from `pip` also. 
+To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager.
+
+Whereas `requests`, `beautifulsoup4` and `lxml` can be installed from `pip` also. 
 
 ### For Ubuntu/Debian based systems:
 
