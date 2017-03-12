@@ -1,6 +1,6 @@
 # Instant-Lyrics
 
-Get lyrics of the currently playing spotify song, or any song, instantly.
+Instantly fetches the lyrics of the currently playing spotify song, or any song, and displays it on a window.
 
 A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
