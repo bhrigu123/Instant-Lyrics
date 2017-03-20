@@ -25,7 +25,12 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * lxml
 
-Works with Python 2/3. Shown below is installation and running with Python 2.
+# Compatibility
+
+* Python 2/3
+* Linux
+
+Shown below is installation and running with Python 2.
 
 To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager.
 
