@@ -49,11 +49,10 @@ Whereas `requests`, `beautifulsoup4` and `lxml` can be installed from `pip` also
 `sudo pacman -S python2-gobject libappindicator-gtk3`
 
 ### Fedora (not tested yet)
-`sudo dnf install pygobject3 python-gobject`
 
-`sudo yum install libappindicator-gtk3`
-
-`pip install requests beautifulsoup4 lxml`
+``` sh
+sudo dnf install dbus-python python-gobject libappindicator-gtk3 python2-requests python-beautifulsoup4 python2-lxml
+```
 <br>
 
 
@@ -95,14 +94,14 @@ Exec=python [path of python file]
 Terminal=false
 ```
 
-Replace `[path of icon]` with the complete path of the icon. The icon is named `icon.svg` inside the root directory of the repository.
+Replace `[path of icon]` with the complete path of the icon. The icon is present in `icons/instant-lyrics.svg` inside the root directory of the repository.
 
 Replace `[path of python file]` with the complete path of the file `InstantLyrics.py` which is also in the root directory of the repo.
 
 These two lines should look something like:
 
 ```
-Icon=/home/ubuntu/Instant-Lyrics/icon.svg
+Icon=/home/ubuntu/Instant-Lyrics/icons/instant-lyrics.svg
 Exec=python /home/ubuntu/Instant-Lyrics/InstantLyrics.py
 ```
 

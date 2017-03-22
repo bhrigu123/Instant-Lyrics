@@ -25,7 +25,7 @@ class LyricsWindow(Gtk.Window):
 
     def __init__(self, type):
         Gtk.Window.__init__(self, title="Lyrics")
-        self.set_icon_from_file(get_icon_path('icon.svg'))
+        self.set_icon_from_file(get_icon_path('icons/instant-lyrics.svg'))
         self.set_border_width(20)
         self.set_default_size(350, 650)
         self.set_position(Gtk.WindowPosition.CENTER)
@@ -154,7 +154,7 @@ class AppIndicator():
         signal.signal(signal.SIGINT, signal.SIG_DFL)
 
         indicator = appindicator.Indicator.new(APPINDICATOR_ID, get_icon_path(
-            'icon.svg'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
+            'icons/instant-lyrics-24.png'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
         indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
         indicator.set_menu(self.build_menu())
         Gtk.main()
