@@ -71,7 +71,7 @@ sudo apt install python-gi python-dbus gir1.2-appindicator3-0.1
 sudo apt install python-requests python-bs4 python-lxml
 ```
 
-(requests, lxml and bs4 can be install from `pip` also: `pip install requests lxml beautifiulsoip4`)
+(requests, lxml and bs4 can be install from `pip` also: `pip install requests lxml beautifiulsoup4`)
 
 ### For Arch users
 
