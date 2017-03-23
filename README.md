@@ -11,7 +11,40 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 ### GIF
 ![working](https://cloud.githubusercontent.com/assets/6123105/23824730/e0e0829e-06a1-11e7-8d57-3235c4266f2c.gif)
 
-# Requirements
+
+# Compatibility
+
+* Python 2/3
+
+* Linux
+
+
+# Installation
+You can either download an [AppImage](http://appimage.org/) or install from source.
+
+## AppImage
+
+AppImage runs on most of the Linux distros.
+
+1. Download the `.AppImage` file of the latest version from the [releases]()
+
+2. Make the file executable (two ways):
+    
+    * Open terminal. Go to the directory of the downloaded AppImage file. Run the command:
+        `chmod a+x filename.AppImage`. (where `filename` is your downloaded AppImage)
+
+    * Or you can also use GUI: ([see this](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80))
+
+3. Run the file by double-clicking it. (or from terminal using the command: `./filename.AppImage`)
+
+4. The first time you run it, it will ask you to associate the file with system. Click `Yes`. This will create a desktop entry in you Applications list, and you can start the app from your Applications also.
+
+
+## From Source
+
+To install from source, you will need to install the required dependencies first (shown below):
+
+### Requirements
 
 * python-gi (PyGObject)
 
@@ -25,53 +58,48 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 * lxml
 
-# Compatibility
-
-* Python 2/3
-* Linux
 
 Shown below is installation and running with Python 2.
 
-To install `python-dbus`, `appindicator3` and `python-gi`, you will need to install using your package manager.
-
-Whereas `requests`, `beautifulsoup4` and `lxml` can be installed from `pip` also. 
-
 ### For Ubuntu/Debian based systems:
 
-`sudo apt install python-gi python-dbus gir1.2-appindicator3-0.1 `
+``` sh
+sudo apt install python-gi python-dbus gir1.2-appindicator3-0.1
+```
 
-`pip install requests beautifulsoup4 lxml`
+``` sh
+sudo apt install python-requests python-bs4 python-lxml
+```
+
+(requests, lxml and bs4 can be install from `pip` also: `pip install requests lxml beautifiulsoip4`)
 
 ### For Arch users
 
-`sudo pacman -S python2-dbus python2-requests python2-lxml python2-beautifulsoup4`
-
-`sudo pacman -S python2-gobject libappindicator-gtk3`
+``` sh
+sudo pacman -S python2-dbus python2-requests python2-lxml python2-beautifulsoup4 python2-gobject libappindicator-gtk3
+```
 
 ### Fedora (not tested yet)
 
 ``` sh
 sudo dnf install dbus-python python-gobject libappindicator-gtk3 python2-requests python-beautifulsoup4 python2-lxml
 ```
-<br>
 
+## Install from source
 
-# Installation
+1. Download the zip archive from the [releases]() and extract it. (Or clone this repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
 
-## From source
-
-1. Clone the repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
-
-2. `cd Instant-Lyrics/`
+2. Go inside the cloned/extracted folder `cd Instant-Lyrics/`
 
 3. Run the command `python InstantLyrics.py`
 
 The icon will appear in the system tray (indicator panel). You can start using the application from there.
 
+<br>
 
 # Creating a launcher shortcut
 
-You can either use the application from the terminal, or create a launcher shortcut, which will add the application in your launcher menu:
+If you have installed from source, you can either use the application from the terminal, or create a launcher shortcut (which will add the application in your launcher menu):
 
 ![Launcher](https://cloud.githubusercontent.com/assets/6123105/23824317/4735e83e-069a-11e7-8b1e-2814632bb3aa.jpeg)
 
