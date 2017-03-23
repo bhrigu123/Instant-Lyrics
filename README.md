@@ -26,7 +26,7 @@ You can either download an [AppImage](http://appimage.org/) or install from sour
 
 AppImage runs on most of the Linux distros.
 
-1. Download the `.AppImage` file of the latest version from the [releases]()
+1. Download the `.AppImage` file of the latest version from the [releases](https://github.com/bhrigu123/Instant-Lyrics/releases)
 
 2. Make the file executable (two ways):
     
@@ -87,7 +87,7 @@ sudo dnf install dbus-python python-gobject libappindicator-gtk3 python2-request
 
 ## Install from source
 
-1. Download the zip archive from the [releases]() and extract it. (Or clone this repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
+1. Download the zip archive from the [releases](https://github.com/bhrigu123/Instant-Lyrics/releases) and extract it. (Or clone this repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
 
 2. Go inside the cloned/extracted folder `cd Instant-Lyrics/`
 
