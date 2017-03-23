@@ -37,7 +37,7 @@ AppImage runs on most of the Linux distros.
 
 3. Run the file by double-clicking it. (or from terminal using the command: `./filename.AppImage`)
 
-4. The first time you run it, it will ask you to associate the file with system. Click `Yes`. This will create a desktop entry in you Applications list, and you can start the app from your Applications also.
+4. The first time you run it, it will ask you to integrate the file with system. Click `Yes`. This will create a desktop entry in you Applications list, and you can start the app from your Applications also.
 
 
 ## From Source
