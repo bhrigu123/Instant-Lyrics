@@ -24,20 +24,7 @@ You can either download an [AppImage](http://appimage.org/) or install from sour
 
 ## AppImage
 
-AppImage runs on most of the Linux distros.
-
-1. Download the `.AppImage` file of the latest version from the [releases](https://github.com/bhrigu123/Instant-Lyrics/releases)
-
-2. Make the file executable (two ways):
-    
-    * Open terminal. Go to the directory of the downloaded AppImage file. Run the command:
-        `chmod a+x filename.AppImage`. (where `filename` is your downloaded AppImage)
-
-    * Or you can also use GUI: ([see this](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80))
-
-3. Run the file by double-clicking it. (or from terminal using the command: `./filename.AppImage`)
-
-4. The first time you run it, it will ask you to integrate the file with system. Click `Yes`. This will create a desktop entry in you Applications list, and you can start the app from your Applications also.
+The AppImage is being fixed at the moment and will be available soon. Install from source for now.
 
 
 ## From Source
