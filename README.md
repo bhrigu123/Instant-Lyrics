@@ -79,7 +79,7 @@ sudo apt install python-requests python-bs4 python-lxml
 sudo pacman -S python2-dbus python2-requests python2-lxml python2-beautifulsoup4 python2-gobject libappindicator-gtk3
 ```
 
-### Fedora (not tested yet)
+### Fedora
 
 ``` sh
 sudo dnf install dbus-python python-gobject libappindicator-gtk3 python2-requests python-beautifulsoup4 python2-lxml
@@ -87,11 +87,15 @@ sudo dnf install dbus-python python-gobject libappindicator-gtk3 python2-request
 
 ## Install from source
 
-1. Download the zip archive from the [releases](https://github.com/bhrigu123/Instant-Lyrics/releases) and extract it. (Or clone this repository. `git clone https://github.com/bhrigu123/Instant-Lyrics.git`
+After you've installed the dependencies, open terminal and go to the directory where you want to install. Enter the commands:
 
-2. Go inside the cloned/extracted folder `cd Instant-Lyrics/`
+``` sh
+git clone https://github.com/bhrigu123/Instant-Lyrics.git
 
-3. Run the command `python InstantLyrics.py`
+cd Instant-Lyrics/
+
+python InstantLyrics.py
+```
 
 The icon will appear in the system tray (indicator panel). You can start using the application from there.
 
