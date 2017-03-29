@@ -12,14 +12,14 @@ class LyricsWindow(Gtk.Window):
 
     def __init__(self, type):
         Gtk.Window.__init__(self, title="Lyrics")
-        self.set_icon_from_file(get_icon_path('../icons/instant-lyrics.svg'))
+        self.set_icon_from_file(get_icon_path('../icons/instant-lyrics-32.png'))
         self.set_border_width(20)
         self.set_default_size(350, 650)
         self.set_position(Gtk.WindowPosition.CENTER)
 
         self.main_box = Gtk.Box(
             orientation=Gtk.Orientation.VERTICAL, spacing=6)
-        self.main_box.set_size_request(350, 700)
+        self.main_box.set_size_request(350, 650)
 
         if(type == "get"):
             entry_hbox = self.create_input_box()
@@ -72,7 +72,7 @@ class LyricsWindow(Gtk.Window):
         lyrics_vbox.pack_start(self.title, False, False, 5)
         lyrics_vbox.pack_start(self.spinner, False, False, 5)
         lyrics_vbox.pack_start(self.lyrics, False, False, 5)
-        lyrics_vbox.set_size_request(350, 700)
+        lyrics_vbox.set_size_request(350, 650)
 
         return lyrics_vbox
 
@@ -138,7 +138,7 @@ class PreferenceWindow(Gtk.Window):
 
     def __init__(self):
         Gtk.Window.__init__(self, title="Instant-Lyrics Prefenreces")
-        self.set_icon_from_file(get_icon_path('../icons/instant-lyrics.svg'))
+        self.set_icon_from_file(get_icon_path('../icons/instant-lyrics-32.png'))
         self.set_border_width(20)
         self.set_default_size(350, 550)
         self.set_position(Gtk.WindowPosition.CENTER)
