@@ -23,8 +23,6 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 ## From Source
 
-To install from source, you will need to install the required dependencies first (shown below):
-
 ### Requirements
 
 * python-gi (PyGObject)
@@ -40,7 +38,7 @@ To install from source, you will need to install the required dependencies first
 * lxml
 
 
-First, install dependencies:
+First, install the requirements:
 
 ### For Ubuntu/Debian based systems:
 
