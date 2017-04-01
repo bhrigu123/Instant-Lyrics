@@ -22,7 +22,7 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 # Installation
 You can either download an [AppImage](http://appimage.org/) or install from source.
 
-## AppImage
+## AppImage (Old version. For latest veriosn , install from source)
 
 AppImage runs on most of the Linux distros.
 
@@ -64,11 +64,7 @@ Shown below is installation and running with Python 2.
 ### For Ubuntu/Debian based systems:
 
 ``` sh
-sudo apt install python-gi python-dbus gir1.2-appindicator3-0.1
-```
-
-``` sh
-sudo apt install python-requests python-bs4 python-lxml
+sudo apt install python-gi python-dbus gir1.2-appindicator3-0.1 python-requests python-bs4 python-lxml
 ```
 
 (requests, lxml and bs4 can be install from `pip` also: `pip install requests lxml beautifiulsoup4`)
@@ -103,43 +99,13 @@ The icon will appear in the system tray (indicator panel). You can start using t
 
 # Creating a launcher shortcut
 
-If you have installed from source, you can either use the application from the terminal, or create a launcher shortcut (which will add the application in your launcher menu):
-
-![Launcher](https://cloud.githubusercontent.com/assets/6123105/23824317/4735e83e-069a-11e7-8b1e-2814632bb3aa.jpeg)
-
-You can find several ways of doing so. You can also follow the below steps:
-
-(From the terminal)
-
-* `sudo touch /usr/share/applications/instant-lyrics.desktop`. (Creates a new file in /usr/share/applications).
-
-* Open this new file with an editor. Eg. opening with gedit: `gedit /usr/share/applications/instant-lyrics.desktop`. Paste the following in it:
-
-```
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Instant Lyrics
-Comment=Show lyrics of songs instantly
-Icon=[path of icon]
-Exec=python [path of python file]
-Terminal=false
-```
-
-Replace `[path of icon]` with the complete path of the icon. The icon is present in `icons/instant-lyrics.svg` inside the root directory of the repository.
-
-Replace `[path of python file]` with the complete path of the file `InstantLyrics.py` which is also in the root directory of the repo.
-
-These two lines should look something like:
-
-```
-Icon=/home/ubuntu/Instant-Lyrics/icons/instant-lyrics.svg
-Exec=python /home/ubuntu/Instant-Lyrics/InstantLyrics.py
-```
-
-* Save the file.
+If you have installed from source, you can go to **Preferences** from the menu options, and click on the button `Create Desktop Entry`.
 
 You should be able to see the `Instant Lyrics` application shortcut in your launcher menu.
+
+You can also find several manual ways of doing so from the web.
+
+![Launcher](https://cloud.githubusercontent.com/assets/6123105/23824317/4735e83e-069a-11e7-8b1e-2814632bb3aa.jpeg)
 
 
 # Contribution

@@ -8,19 +8,21 @@ import signal
 import threading
 
 from src.windows import LyricsWindow, PreferenceWindow
-from src.utils import get_icon_path
+from . import utils
+from src.settings import APPINDICATOR_ID, CONFIG_PATH
 
-APPINDICATOR_ID = 'lyricsappindicator'
 
 class AppIndicator():
 
     def __init__(self):
         signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-        indicator = appindicator.Indicator.new(APPINDICATOR_ID, get_icon_path(
+        indicator = appindicator.Indicator.new(APPINDICATOR_ID, utils.get_icon_path(
             '../icons/instant-lyrics-24.png'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
         indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
         indicator.set_menu(self.build_menu())
+
+        self.Config = utils.get_config()
         Gtk.main()
 
     def build_menu(self):
@@ -46,16 +48,16 @@ class AppIndicator():
         return menu
 
     def fetch_lyrics(self, source):
-        win = LyricsWindow("get")
+        win = LyricsWindow("get", self)
 
     def spotify_lyrics(self, source):
-        win = LyricsWindow("spotify")
+        win = LyricsWindow("spotify", self)
         thread = threading.Thread(target=win.get_spotify)
         thread.daemon = True
         thread.start()
 
     def preferences(self, source):
-        win = PreferenceWindow()
+        win = PreferenceWindow(self)
 
     def quit(self, source):
         Gtk.main_quit()
