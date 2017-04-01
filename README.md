@@ -20,25 +20,6 @@ A linux application with a very convinient GUI. Build with Python Gtk+3 (gi).
 
 
 # Installation
-You can either download an [AppImage](http://appimage.org/) or install from source.
-
-## AppImage (Old version. For latest veriosn , install from source)
-
-AppImage runs on most of the Linux distros.
-
-1. Download the `.AppImage` file of the latest version from the [releases](https://github.com/bhrigu123/Instant-Lyrics/releases)
-
-2. Make the file executable (two ways):
-    
-    * Open terminal. Go to the directory of the downloaded AppImage file. Run the command:
-        `chmod a+x filename.AppImage`. (where `filename` is your downloaded AppImage)
-
-    * Or you can also use GUI: ([see this](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80))
-
-3. Run the file by double-clicking it. (or from terminal using the command: `./filename.AppImage`)
-
-4. The first time you run it, it will ask you to integrate the file with system. Click `Yes`. This will create a desktop entry in you Applications list, and you can start the app from your Applications also.
-
 
 ## From Source
 
@@ -59,7 +40,7 @@ To install from source, you will need to install the required dependencies first
 * lxml
 
 
-Shown below is installation and running with Python 2.
+First, install dependencies:
 
 ### For Ubuntu/Debian based systems:
 
