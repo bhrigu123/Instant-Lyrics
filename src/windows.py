@@ -55,13 +55,15 @@ class LyricsWindow(Gtk.Window):
         entry_hbox.set_property("margin", 10)
 
         self.input = Gtk.Entry()
-        self.input.set_text("song/artist")
+        self.input.set_placeholder_text("song/artist")
         self.input.connect("key-release-event", self.on_key_release)
         entry_hbox.pack_start(self.input, True, True, 0)
 
         submit = Gtk.Button.new_with_label("Get Lyrics")
         submit.connect("clicked", self.fetch_lyrics)
         entry_hbox.pack_start(submit, True, True, 0)
+
+        submit.grab_focus()
 
         return entry_hbox
 

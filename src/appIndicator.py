@@ -2,7 +2,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('AppIndicator3', '0.1')
 from gi.repository import AppIndicator3 as appindicator
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 import signal
 import threading
@@ -16,7 +16,8 @@ class AppIndicator():
 
     def __init__(self):
         signal.signal(signal.SIGINT, signal.SIG_DFL)
-
+        Gdk.set_allowed_backends("x11,*")
+        
         indicator = appindicator.Indicator.new(APPINDICATOR_ID, utils.get_icon_path(
             '../icons/instant-lyrics-24.png'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
         indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
